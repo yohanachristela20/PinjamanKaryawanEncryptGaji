@@ -1,0 +1,2 @@
+id_pinjaman,tanggal_pengajuan,jumlah_pinjaman,jumlah_angsuran,pinjaman_setelah_pembulatan,keperluan,id_peminjam,id_asesor,bulan_angsuran,status
+P00003,2025-02-19,15000000,250000,15000000,Pengobatan,51036,50483,,Belum Lunas

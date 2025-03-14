@@ -1,0 +1,9 @@
+version: "2"
+authtoken: 2grReWzlVkR37uLR4RcunkPIQC3_6LrdjdKWKDfpjUiXvew17
+# tunnels: 
+#   first: 
+#     addr: 5000
+#     proto: http
+#   second:
+#     addr: 3000
+#     proto: http

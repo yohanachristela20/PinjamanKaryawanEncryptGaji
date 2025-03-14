@@ -1,0 +1,4 @@
+id_pinjaman,tanggal_pengajuan,jumlah_pinjaman,jumlah_angsuran,pinjaman_setelah_pembulatan,keperluan,id_peminjam,id_asesor,bulan_angsuran,status_pelunasan
+P00001,11/17/2024,15000000,250000,15000000,Pendidikan,51099,50483,1,
+P00002,12/28/2024,20000000,334000,20040000,Pengobatan,52008,50483,1,
+P00003,12/28/2024,35000000,584000,35040000,Renovasi,51308,50483,1,

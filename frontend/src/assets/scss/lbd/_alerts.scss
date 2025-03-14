@@ -1,0 +1,155 @@
+.alert{
+    border: 0;
+    border-radius: 0;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    font-size: 14px;
+
+    .container &{
+        border-radius: 4px;
+
+    }
+    .navbar &{
+        border-radius: 0;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 85px;
+        width: 100%;
+        z-index: 3;
+    }
+    .navbar:not(.navbar-transparent) &{
+        top: 70px;
+    }
+
+    span[data-notify="icon"]{
+        font-size: 30px;
+        display: block;
+        left: 15px;
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+    }
+
+    i.nc-simple-remove{
+        font-size: 12px !important;
+        font: bold normal normal 14px/1 'nucleo-icons';
+    }
+
+    button.close{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -13px;
+        z-index: 1033;
+        background-color: #FFFFFF;
+        display: block;
+        border-radius: 50%;
+        opacity: .4;
+        line-height: 9px;
+        width: 25px;
+        height: 25px;
+        outline: 0 !important;
+        text-align: center;
+        padding: 3px;
+        font-weight: 300;
+
+        &:hover{
+            opacity: .55;
+        }
+    }
+
+    .close ~ span{
+        display: block;
+        max-width: 89%;
+    }
+
+    &[data-notify="container"]{
+        padding: 10px 10px 10px 20px;
+        border-radius: $border-radius-base;
+    }
+
+    &.alert-with-icon{
+        padding-left: 65px;
+    }
+}
+.alert-primary{
+    background-color: $blue-navbar;
+}
+.alert-info{
+    background-color: $azure-navbar;
+}
+.alert-success {
+    background-color: $green-navbar;
+}
+.alert-warning {
+     background-color: $orange-navbar;
+}
+.alert-danger {
+     background-color: $red-navbar;
+}
+
+.bg-alert{
+    background-image: url("../../../assets/img/alert3.png");
+    // background-size: 920px 230px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 23px;
+    font-size: 20px;
+    color: black;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: red; /* Color change on hover */
+}
+
+.font-alert-danger {
+    color: rgb(134, 5, 5);
+}
+
+.font-alert-success {
+    color: rgb(5, 134, 14);
+}
+
+.font-alert-warning {
+    color: rgb(133, 78, 0);
+}
+
+.link-pengajuan{
+    color: rgb(133, 78, 0);
+    font-weight: 700;
+    text-decoration:underline;
+}
+
+a:hover {
+    color: red;
+    text-decoration:underline;
+}
+
+
+.info-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    
+}
+
+.info-icon {
+    width: 3rem; /* Ukuran responsif */
+    height: 3rem;
+}
+

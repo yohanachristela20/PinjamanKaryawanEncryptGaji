@@ -1,0 +1,28 @@
+GET http://localhost:5000/plafond-update
+###
+GET http://localhost:5000/plafond/PL003
+
+###
+# POST http://localhost:5000/antrean
+# Content-Type: application/json
+
+# {
+#     "id_pinjaman": "P00003"
+# }
+
+
+###
+POST http://localhost:5000/plafond-update
+Content-Type: application/json
+
+{
+    "tanggal_plafond_tersedia": 2025-01-13,
+    "plafond_saat_ini": 8300000, 
+    "id_pinjaman": "P000012", 
+
+}
+
+
+###m 
+GET http://localhost:5000/plafond/latest-id 
+

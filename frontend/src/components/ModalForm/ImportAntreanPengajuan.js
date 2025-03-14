@@ -21,7 +21,7 @@ const ImportAntreanPengajuan = ({showImportModal, setShowImportModal, onSuccess}
     const formData = new FormData();
     formData.append("csvfile", file);
 
-    fetch("http://localhost:5000/pengajuan/import-csv", {
+    fetch("http://10.70.10.157:5000/pengajuan/import-csv", {
       method: "POST",
       body: formData,
       headers: {

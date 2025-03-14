@@ -26,7 +26,7 @@ const ImportPlafond = ({showImportModal, setShowImportModal, onSuccess}) => {
     const formData = new FormData();
     formData.append("csvfile", file);
 
-    fetch("http://localhost:5000/plafond/import-csv", {
+    fetch("http://10.70.10.157:5000/plafond/import-csv", {
       method: "POST",
       body: formData,
       headers: {
@@ -55,7 +55,7 @@ const ImportPlafond = ({showImportModal, setShowImportModal, onSuccess}) => {
   };
 
   const downloadCSV = (data) => {
-    const header = ["id_plafond", "tanggal_penetapan", "jumlah_plafond", "keterangan", "createdAt", "updatedAt"];
+    const header = ["id_plafond", "tanggal_penetapan", "jumlah_plafond", "keterangan"];
   
     const csvContent = [header]
       .map((e) => e.join(","))

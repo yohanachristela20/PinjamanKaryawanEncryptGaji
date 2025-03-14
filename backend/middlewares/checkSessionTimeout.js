@@ -64,7 +64,11 @@ const checkSessionTimeout = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, jwtSecret);
-        const userId = decoded?.id_user;
+        console.log("Decoded: ", decoded);
+        const userId = decoded.id;
+        console.log("User id: ", userId);
+        const userToken = decoded.token;
+        console.log("User token: ", userToken);
 
         const currentTime = Date.now();
         const userSession = activeUsers[userId];
@@ -74,7 +78,7 @@ const checkSessionTimeout = (req, res, next) => {
 
             // Jika sudah tidak aktif lebih dari 5 menit atau heartbeatCount > 3
             // 300000 = 60000*5
-            if (heartbeatCount === null || heartbeatCount > 1 || (currentTime - lastActivity) > 300000) {
+            if (heartbeatCount === null || heartbeatCount > 5 || (currentTime - lastActivity) > 300000) {
                 clearUserSession(userId);
                 console.log(`Sesi pengguna ${userId} berakhir.`);
                 // return res.status(401).json({ redirect: '/login', message: 'Sesi Anda telah berakhir. Silakan login kembali.' });

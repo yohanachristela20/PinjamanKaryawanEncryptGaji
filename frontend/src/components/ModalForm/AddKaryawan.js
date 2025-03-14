@@ -42,7 +42,7 @@ const AddKaryawan = ({showAddModal, setShowAddModal, onSuccess}) => {
         }
 
         try {
-            await axios.post('http://localhost:5000/karyawan', {
+            await axios.post('http://10.70.10.157:5000/karyawan', {
                 id_karyawan,
                 nama, 
                 jenis_kelamin,

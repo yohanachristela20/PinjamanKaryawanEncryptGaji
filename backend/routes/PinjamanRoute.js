@@ -615,7 +615,7 @@ router.post('/pengajuan/import-csv', upload.single("csvfile"), async (req,res) =
       keperluan: row.keperluan,
       status_pengajuan: row.status_pengajuan = "Diterima",
       status_transfer: row.status_transfer = "Selesai",
-      // status_pelunasan: row.status_pelunasan = "",
+      status_pelunasan: "",
       not_compliant: row.not_compliant === "true",
       id_peminjam: parseInt(row.id_peminjam, 10),
       id_asesor: parseInt(row.id_asesor, 10) || null,

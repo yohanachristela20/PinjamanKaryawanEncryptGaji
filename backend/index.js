@@ -29,7 +29,7 @@
 
 
 // app.use(cors({
-//     origin: "http://localhost:3000",
+//     origin: "http://10.70.10.157:3000",
 //     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
 //     allowedHeaders: ["Content-Type", "Authorization"],
 //     credentials: true,
@@ -41,7 +41,7 @@
 
 // app.options("*", (req, res) => {
 //     console.log("OPTIONS request received for:", req.path);
-//     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+//     res.header("Access-Control-Allow-Origin", "http://10.70.10.157:3000");
 //     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH");
 //     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 //     res.header("Access-Control-Allow-Credentials", "true");
@@ -59,7 +59,7 @@
 
 
 // // app.options('*', (req, res) => {
-// //     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+// //     res.header("Access-Control-Allow-Origin", "http://10.70.10.157:3000");
 // //     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, PATCH");
 // //     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
 // //     // res.header("Access-Control-Allow-Credentials", "true");
@@ -149,7 +149,7 @@ const app = express();
 dotenv.config();
 
 app.use(bodyParser.json());
-app.use(cors({origin: "http://localhost:3000"}));
+app.use(cors({origin: "http://10.70.10.157:3000"}));
 app.use(express.json());
 
 app.use(UserRoute); // Rute user untuk login, tanpa middleware otentikasi

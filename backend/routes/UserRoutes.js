@@ -22,7 +22,6 @@ import {getUser,
         getLastUserId,
         checkUserActivity,
 } from "../controllers/UserController.js"; 
-import checkSessionTimeout from "../middlewares/checkSessionTimeout.js";
 
 const router = express.Router(); 
 
@@ -329,7 +328,7 @@ router.post('/logout', (req, res) => {
     return res.status(200).json({ message: "Logout berhasil" });
   } catch (error) {
     console.error("Token error saat logout:", error.message);
-        return res.status(401).json({ message: "Token tidak valid atau sudah kedaluwarsa." });
+    return res.status(401).json({ redirect: '/login', message: "Token tidak valid atau sudah kedaluwarsa." });
   }
 
 })

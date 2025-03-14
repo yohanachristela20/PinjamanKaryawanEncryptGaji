@@ -94,16 +94,16 @@ import {
          responseTotalDibayar,
          responsePlafond,
        ] = await Promise.all([
-         axios.get("http://localhost:5000/total-pinjaman-keseluruhan", {
+         axios.get("http://10.70.10.157:5000/total-pinjaman-keseluruhan", {
            headers: { Authorization: `Bearer ${token}` },
          }),
-         axios.get("http://localhost:5000/total-peminjam", {
+         axios.get("http://10.70.10.157:5000/total-peminjam", {
            headers: { Authorization: `Bearer ${token}` },
          }),
-         axios.get("http://localhost:5000/total-dibayar", {
+         axios.get("http://10.70.10.157:5000/total-dibayar", {
            headers: { Authorization: `Bearer ${token}` },
          }),
-         axios.get("http://localhost:5000/latest-plafond-saat-ini", {
+         axios.get("http://10.70.10.157:5000/latest-plafond-saat-ini", {
            headers: { Authorization: `Bearer ${token}` },
          }),
        ]);
@@ -134,7 +134,7 @@ import {
   const getPinjaman = async () =>{
     try {
       // setLoading(true);
-      const response = await axios.get("http://localhost:5000/pinjaman", {
+      const response = await axios.get("http://10.70.10.157:5000/pinjaman", {
         headers: {
           Authorization: `Bearer ${token}`,
       },
@@ -150,7 +150,7 @@ import {
   const getPinjamanData = async (req, res) =>{
     try {
       // setLoading(true);
-      const response = await axios.get("http://localhost:5000/pinjaman-data", {
+      const response = await axios.get("http://10.70.10.157:5000/pinjaman-data", {
         headers: {
           Authorization: `Bearer ${token}`,
       },
@@ -166,7 +166,7 @@ import {
   const getPlafond = async () =>{
     try {
       // setLoading(true);
-      const response = await axios.get("http://localhost:5000/jumlah-plafond", {
+      const response = await axios.get("http://10.70.10.157:5000/jumlah-plafond", {
         headers: {
           Authorization: `Bearer ${token}`,
       },

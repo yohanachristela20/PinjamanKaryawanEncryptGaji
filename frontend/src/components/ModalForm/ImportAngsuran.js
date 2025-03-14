@@ -21,7 +21,7 @@ const ImportAngsuran = ({showImportModal, setShowImportModal, onSuccess}) => {
     const formData = new FormData();
     formData.append("csvfile", file);
 
-    fetch("http://localhost:5000/angsuran/import-csv", {
+    fetch("http://10.70.10.157:5000/angsuran/import-csv", {
       method: "POST",
       body: formData,
       headers: {

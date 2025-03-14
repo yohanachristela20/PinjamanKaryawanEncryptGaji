@@ -22,7 +22,7 @@ const EditUser = ({showEditModal, setShowEditModal, user, onSuccess}) => {
     const updateUser = async(e) => {
         e.preventDefault();
         try {
-            await axios.patch(`http://localhost:5000/user/${user.id_user}`, {
+            await axios.patch(`http://10.70.10.157:5000/user/${user.id_user}`, {
                 id_user,
                 password,
                 role

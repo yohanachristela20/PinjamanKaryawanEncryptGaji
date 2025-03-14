@@ -71,7 +71,7 @@ function RiwayatPinjamanKaryawan() {
     try {
       if (!token || !username) return;
 
-      const response = await axios.get(`http://localhost:5000/user-details/${username}`, {
+      const response = await axios.get(`http://10.70.10.157:5000/user-details/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -91,7 +91,7 @@ function RiwayatPinjamanKaryawan() {
 
   const fetchAntrean = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/antrean-pengajuan", {
+      const response = await axios.get("http://10.70.10.157:5000/antrean-pengajuan", {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -111,22 +111,22 @@ function RiwayatPinjamanKaryawan() {
       }
 
       Promise.all([
-        axios.get("http://localhost:5000/total-pinjaman-keseluruhan", {
+        axios.get("http://10.70.10.157:5000/total-pinjaman-keseluruhan", {
           headers: {
             Authorization: `Bearer ${token}`,
         },
         }),
-        axios.get("http://localhost:5000/total-peminjam", {
+        axios.get("http://10.70.10.157:5000/total-peminjam", {
           headers: {
             Authorization: `Bearer ${token}`,
         },
         }),
-        axios.get("http://localhost:5000/total-dibayar", {
+        axios.get("http://10.70.10.157:5000/total-dibayar", {
           headers: {
             Authorization: `Bearer ${token}`,
         },
         }), 
-        axios.get("http://localhost:5000/plafond-tersedia", {
+        axios.get("http://10.70.10.157:5000/plafond-tersedia", {
           headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -174,7 +174,7 @@ function RiwayatPinjamanKaryawan() {
   const getPinjaman = async () =>{
     try {
       // setLoading(true);
-      const response = await axios.get("http://localhost:5000/pinjaman", {
+      const response = await axios.get("http://10.70.10.157:5000/pinjaman", {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -190,7 +190,7 @@ function RiwayatPinjamanKaryawan() {
   const getAntrean = async () => {
     try {
       // setLoading(true);
-      const response = await axios.get("http://localhost:5000/antrean-pengajuan", {
+      const response = await axios.get("http://10.70.10.157:5000/antrean-pengajuan", {
         headers: {
             Authorization: `Bearer ${token}`,
         },

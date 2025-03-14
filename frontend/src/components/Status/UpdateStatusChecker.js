@@ -8,7 +8,7 @@ const UpdateStatusChecker = () => {
     useEffect(() => {
         const checkUpdateStatus = async () => {
             try {
-                const response = await axios.get("http://localhost:5000/status-update");
+                const response = await axios.get("http://10.70.10.157:5000/status-update");
                 setUpdateStatus(response.data.status);
 
                 if (response.data.status === "updated") {

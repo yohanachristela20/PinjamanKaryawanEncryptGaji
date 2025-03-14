@@ -114,7 +114,7 @@ function BerandaFinance() {
 
   const fetchAntrean = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/antrean-pengajuan", {
+      const response = await axios.get("http://10.70.10.157:5000/antrean-pengajuan", {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -145,7 +145,7 @@ function BerandaFinance() {
   useEffect(() => {
     const fetchYears = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/filter-piutang", {
+        const response = await axios.get("http://10.70.10.157:5000/filter-piutang", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -168,7 +168,7 @@ function BerandaFinance() {
   
       try {
         const response = await axios.get(
-          `http://localhost:5000/user-details/${username}`,
+          `http://10.70.10.157:5000/user-details/${username}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -190,16 +190,16 @@ function BerandaFinance() {
     const fetchSummaryData = async () => {
       try {
         const [responseTotalPinjaman, responseTotalPeminjam, responseTotalDibayar, responsePlafond] = await Promise.all([
-          axios.get("http://localhost:5000/total-pinjaman-keseluruhan", {
+          axios.get("http://10.70.10.157:5000/total-pinjaman-keseluruhan", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:5000/total-peminjam", {
+          axios.get("http://10.70.10.157:5000/total-peminjam", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:5000/total-dibayar", {
+          axios.get("http://10.70.10.157:5000/total-dibayar", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("http://localhost:5000/latest-plafond-saat-ini", {
+          axios.get("http://10.70.10.157:5000/latest-plafond-saat-ini", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
@@ -246,7 +246,7 @@ function BerandaFinance() {
   const getPinjaman = async () =>{
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/pinjaman", {
+      const response = await axios.get("http://10.70.10.157:5000/pinjaman", {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -262,7 +262,7 @@ function BerandaFinance() {
   const getPinjamanData = async () =>{
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/pinjaman-data", {
+      const response = await axios.get("http://10.70.10.157:5000/pinjaman-data", {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -279,7 +279,7 @@ function BerandaFinance() {
   const getAntrean = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("http://localhost:5000/antrean-pengajuan", {
+      const response = await axios.get("http://10.70.10.157:5000/antrean-pengajuan", {
         headers: {
             Authorization: `Bearer ${token}`,
         },
@@ -341,7 +341,7 @@ function BerandaFinance() {
 
       // Update status_pengajuan
       // console.log("ID Pinjaman:", pinjaman.id_pinjaman);
-      const response = await axios.put(`http://localhost:5000/pinjaman/${pinjaman.id_pinjaman}`, {
+      const response = await axios.put(`http://10.70.10.157:5000/pinjaman/${pinjaman.id_pinjaman}`, {
         status_pengajuan: pinjaman.status_pengajuan,
         status_transfer: "Selesai", 
         id_asesor: userData.id_karyawan, 
@@ -506,7 +506,7 @@ function BerandaFinance() {
   
   const dataPinjaman = async (selectedYear) => {
     try {
-      const response = await axios.get("http://localhost:5000/data-pinjaman", {
+      const response = await axios.get("http://10.70.10.157:5000/data-pinjaman", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -548,7 +548,7 @@ function BerandaFinance() {
       const tahun = selectedYear || new Date().getFullYear();
       const bulan = selectedMonth === "" ? undefined : selectedMonth.padStart(2, '0');
 
-      const response = await axios.get("http://localhost:5000/data-divisi", {
+      const response = await axios.get("http://10.70.10.157:5000/data-divisi", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

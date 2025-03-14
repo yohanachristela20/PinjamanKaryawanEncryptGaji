@@ -23,7 +23,7 @@ const AddPengajuan = ({ showAddModal, setShowAddModal, onSuccess }) => {
 
     const getPinjaman = async () =>{
         try {
-          const response = await axios.get("http://localhost:5000/pinjaman", {
+          const response = await axios.get("http://10.70.10.157:5000/pinjaman", {
             headers: {
               Authorization: `Bearer ${token}`,
           },
@@ -36,7 +36,7 @@ const AddPengajuan = ({ showAddModal, setShowAddModal, onSuccess }) => {
 
       const fetchAntrean = async () => {
         try {
-          const response = await axios.get("http://localhost:5000/antrean-pengajuan", {
+          const response = await axios.get("http://10.70.10.157:5000/antrean-pengajuan", {
             headers: {
               Authorization: `Bearer ${token}`,
           },
@@ -49,7 +49,7 @@ const AddPengajuan = ({ showAddModal, setShowAddModal, onSuccess }) => {
     
     const fetchLatestIdPengajuan = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/pinjaman/latest-id', {
+            const response = await axios.get('http://10.70.10.157:5000/pinjaman/latest-id', {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -102,7 +102,7 @@ const AddPengajuan = ({ showAddModal, setShowAddModal, onSuccess }) => {
             if (!token || !username) return;
       
             try {
-              const response = await axios.get(`http://localhost:5000/user-details/${username}`, {
+              const response = await axios.get(`http://10.70.10.157:5000/user-details/${username}`, {
                 headers: { Authorization: `Bearer ${token}` },
               });
       
@@ -132,7 +132,7 @@ const AddPengajuan = ({ showAddModal, setShowAddModal, onSuccess }) => {
     const savePengajuan = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/pinjaman', {
+            await axios.post('http://10.70.10.157:5000/pinjaman', {
                 id_pinjaman,
                 tanggal_pengajuan,
                 jumlah_pinjaman,

@@ -420,8 +420,8 @@ const updateAngsuranOtomatis = async () => {
         const formattedToday = today.toISOString().split("T")[0];
         const dayOfMonth = today.getDate();
 
-        if (dayOfMonth !== 13) {
-            console.log("Update angsuran otomatis hanya dijalankan pada tanggal 13.");
+        if (dayOfMonth !== 1) {
+            console.log("Update angsuran otomatis hanya dijalankan pada tanggal 1.");
             return;
         }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 
 import { BrowserRouter, Route, Router, Switch, Redirect } from "react-router-dom";
@@ -26,12 +26,28 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import Heartbeat from "views/Heartbeat.js";
 
+const DisableBackButton = () => {
+  useEffect(() => {
+    // Mencegah kembali ke halaman sebelumnya
+    const preventBack = () => {
+      // history.pushState(null, null, location.href);
+      window.history.forward();
+    };
+
+    preventBack(); 
+
+  }, []);
+
+  return null;
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <PlafondProvider>
-  
+  <DisableBackButton />
   <BrowserRouter>
+  <DisableBackButton />
   <ToastContainer />
     <Switch>
       <Route path="/login"  
@@ -46,7 +62,7 @@ root.render(
                 props.history.push(lastRoute);
               }}
             />
-          )} />
+          )} /> 
 
       <PrivateRoute path="/karyawan" roles={["Karyawan"]} render={(props) =>
         (

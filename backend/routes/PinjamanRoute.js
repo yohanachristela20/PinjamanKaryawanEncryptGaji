@@ -195,6 +195,8 @@ router.get("/plafond-saat-ini", async (req, res) => {
     });
 
     let totalDibayar = 0;
+    let statusPinjaman = "Tidak memiliki pinjaman aktif.";
+    let pinjamanInfo = "Tidak ada informasi pinjaman.";
 
     if (plafondUpdate) {
       const updatePlafondPinjaman = parseFloat(plafondUpdate.plafond_saat_ini);

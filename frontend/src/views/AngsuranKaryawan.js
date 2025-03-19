@@ -263,7 +263,7 @@ const downloadPDF = (data) => {
                     </div>
                   ) : (
                 <Table className="table-hover table-striped">
-                  <div className="table-scroll">
+                  <div className="table-scroll" style={{ height: 'auto' }}>
                     <table className="flex-table table table-striped table-hover">
                       <thead>
                       <tr>

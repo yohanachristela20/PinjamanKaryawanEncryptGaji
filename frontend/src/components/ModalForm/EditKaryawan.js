@@ -170,7 +170,8 @@ const EditKaryawan = ({showEditModal, setShowEditModal, karyawan, onSuccess}) =>
                         type="text"
                         required
                         value={nama}
-                        onChange={(e) => handleNamaChange(e.target.value)}
+                        uppercase
+                        onChange={(e) => handleNamaChange(e.target.value.toUpperCase())}
                     ></Form.Control>
                     </Form.Group>
                 </Col>

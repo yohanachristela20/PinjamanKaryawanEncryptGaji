@@ -420,15 +420,15 @@ const updateAngsuranOtomatis = async () => {
         const formattedToday = today.toISOString().split("T")[0];
         const dayOfMonth = today.getDate();
 
-        if (dayOfMonth !== 1) {
-            console.log("Update angsuran otomatis hanya dijalankan pada tanggal 1.");
+        if (dayOfMonth !== 19) {
+            console.log("Update angsuran otomatis hanya dijalankan pada tanggal 19.");
             return;
         }
 
         const thisMonthStart = new Date(today.getFullYear(), today.getMonth(), 1);
         const nextMonthStart = new Date(today.getFullYear(), today.getMonth() + 1, 1);
 
-        const existingPinjamanToday = await Pinjaman.findOne({
+        const existingPinjamanToday = await Pinjaman.findOne({    
             where: {
                 tanggal_pengajuan: formattedToday,
             },

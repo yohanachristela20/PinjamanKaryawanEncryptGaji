@@ -346,7 +346,7 @@ function RiwayatPinjamanKaryawan() {
       <Container fluid>
       <Heartbeat/>
       
-        <Row className="mt-4 mb-4">
+        <Row className="mb-4">
           <SearchBar searchQuery={searchQuery} handleSearchChange={handleSearchChange} />
         </Row>
           

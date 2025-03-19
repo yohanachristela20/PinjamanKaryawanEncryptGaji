@@ -307,7 +307,7 @@ function MasterUser() {
           <SearchBar searchQuery={searchQuery} handleSearchChange={handleSearchChange} />
           
           <Col md="12">
-            <Card className="striped-tabled-with-hover mt-4">
+            <Card className="striped-tabled-with-hover mt-3">
               <Card.Header>
                 <Card.Title as="h4">Master User</Card.Title>
               </Card.Header>
@@ -319,7 +319,7 @@ function MasterUser() {
                     </div>
                   ) : (
                 <Table className="table-hover table-striped">
-                  <div className="table-scroll">
+                  <div className="table-scroll" style={{ height: 'auto' }}>
                     <table className="flex-table table table-striped table-hover">
                       <thead>
                       <tr>

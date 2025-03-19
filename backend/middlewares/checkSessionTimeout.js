@@ -111,10 +111,10 @@
 //     }
 // };
 
-// import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
-// const activeUsers = {};
-// const expiredUsers = new Set();
+const activeUsers = {};
+const expiredUsers = new Set();
 
 // const checkSessionTimeout = (req, res, next) => {
 //     const token = req.headers['authorization']?.split(' ')[1];
@@ -196,7 +196,7 @@
 
 const checkSessionTimeout = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1];
-    console.log("Token: ", token); 
+    // console.log("Token: ", token); 
 
     if (!token) {
         return forceLogout(res);
@@ -204,9 +204,9 @@ const checkSessionTimeout = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
-        console.log("Decoded: ", decoded);
+        // console.log("Decoded: ", decoded);
         const userId = decoded.id;
-        console.log("User id: ", userId);
+        // console.log("User id: ", userId);
 
         const currentTime = Date.now();
         const userSession = activeUsers[userId];

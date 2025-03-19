@@ -146,20 +146,22 @@ router.get("/antrean/:id_pinjaman", async (req,res) => {
     try {
 
         const id_pinjaman = req.params.id_pinjaman;
-        const antrean = await AntreanPengajuan.findOne({
+        const antrean = await AntreanPengajuan.findAll({
             where: { id_pinjaman},
             attributes: ["nomor_antrean"],
+            order: [["nomor_antrean", "ASC"]], 
         });
 
-        if (!antrean) {
+        if (!antrean.length) {
             return res.status(404).json({ message: "Nomor antrean tidak ditemukan" });
         }
-        res.json({nomor_antrean: antrean.nomor_antrean});
+        const nomorAntreanList = antrean.map(a => a.nomor_antrean);
+        res.json({ nomor_antrean: nomorAntreanList });
     } catch (error) {
         console.error("Error fetching antrean by id_pinjaman:", error.message);
         res.status(500).json({ message: "Terjadi kesalahan pada server" });
     }
-})
+});
 
 
 

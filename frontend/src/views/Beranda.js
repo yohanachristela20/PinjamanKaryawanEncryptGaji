@@ -783,135 +783,133 @@ function Beranda() {
         </Button>
         <SearchBar searchQuery={searchQuery} handleSearchChange={handleSearchChange} />
 
-
-        </Row>
-          
-        <Row>
-          <Col md="12">
-            <Card className="striped-tabled-with-hover">
-              <Card.Header>
-                <Card.Title as="h4">Antrean Pengajuan Pinjaman</Card.Title>
-              </Card.Header>
-              <Card.Body className="table-responsive px-0" style={{ overflowX: 'auto'}}>
-                {loading ? (
-                  <div className="text-center">
-                    <Spinner animation="border" variant="primary" />
-                    <p>Loading...</p>
-                  </div>
-                ) : (
-                <Table className="table-hover table-striped">
-                  <div className="table-scroll" style={{ height: 'auto' }}>
-                    <table className="flex-table table table-striped table-hover">
-                      <thead>
-                      <tr>
-                        <th className="border-0 text-wrap center">ID Pinjaman</th>
-                        <th className="border-0 text-wrap">Tanggal Pengajuan</th>
-                        <th className="border-0 text-wrap">Nomor Antrean</th>
-                        <th className="border-0 text-wrap">ID Karyawan</th>
-                        <th className="border-0 text-wrap">Nama Lengkap</th>
-                        <th className="border-0 text-wrap">Jumlah Pinjaman</th>
-                        <th className="border-0 text-wrap">Jumlah Angsuran</th>
-                        <th className="border-0 text-wrap">Jumlah Pinjaman Setelah Pembulatan</th>
-                        <th className="border-0 text-wrap">Rasio Angsuran</th>
-                        <th className="border-0 text-wrap">Keperluan</th>
-                        <th className="border-0 text-wrap">Tanggal Plafond Tersedia</th>
-                        <th className="border-0 text-wrap">Status Pengajuan</th>
-                        <th className="border-0 text-wrap">Status Transfer</th>
-                        <th className="border-0 text-wrap">Aksi</th>
-                      </tr>
-                      </thead>
-                      <tbody className="scroll scroller-tbody">
-                        { currentItems
-                        .map((pinjaman) => (
-                          <tr key={pinjaman.id_pinjaman}>
-                            <td className="text-center">{pinjaman.id_pinjaman}</td>
-                            <td className="text-center">{pinjaman.tanggal_pengajuan}</td>
-                            <td className="text-right">{findNomorAntrean(pinjaman.id_pinjaman)}</td>
-                            <td className="text-right">{pinjaman.id_peminjam}</td>
-                            <td className="text-center">{pinjaman?.Peminjam?.nama || 'N/A'}</td>
-                            <td className="text-right">{formatRupiah(pinjaman.jumlah_pinjaman)}</td>
-                            <td className="text-right">{formatRupiah(pinjaman.jumlah_angsuran)}</td>
-                            <td className="text-right">{formatRupiah(pinjaman.pinjaman_setelah_pembulatan)}</td>
-                            <td className="text-center">{pinjaman.rasio_angsuran}</td>
-                            <td className="text-center">{pinjaman.keperluan}</td>
-                            <td className="text-center">{pinjaman.UpdatePinjamanPlafond ? pinjaman.UpdatePinjamanPlafond.tanggal_plafond_tersedia: '-'}</td>
-                            <td className="text-center">
-                              {pinjaman.status_pengajuan === "Diterima" ? (
+        <Col md="12">
+          <Card className="striped-tabled-with-hover">
+            <Card.Header>
+              <Card.Title as="h4">Antrean Pengajuan Pinjaman</Card.Title>
+            </Card.Header>
+            <Card.Body className="table-responsive px-0" style={{ overflowX: 'auto'}}>
+              {loading ? (
+                <div className="text-center">
+                  <Spinner animation="border" variant="primary" />
+                  <p>Loading...</p>
+                </div>
+              ) : (
+              <Table className="table-hover table-striped">
+                <div className="table-scroll" style={{ height: 'auto' }}>
+                  <table className="flex-table table table-striped table-hover">
+                    <thead>
+                    <tr>
+                      <th className="border-0 text-wrap center">ID Pinjaman</th>
+                      <th className="border-0 text-wrap">Tanggal Pengajuan</th>
+                      <th className="border-0 text-wrap">Nomor Antrean</th>
+                      <th className="border-0 text-wrap">ID Karyawan</th>
+                      <th className="border-0 text-wrap">Nama Lengkap</th>
+                      <th className="border-0 text-wrap">Jumlah Pinjaman</th>
+                      <th className="border-0 text-wrap">Jumlah Angsuran</th>
+                      <th className="border-0 text-wrap">Jumlah Pinjaman Setelah Pembulatan</th>
+                      <th className="border-0 text-wrap">Rasio Angsuran</th>
+                      <th className="border-0 text-wrap">Keperluan</th>
+                      <th className="border-0 text-wrap">Tanggal Plafond Tersedia</th>
+                      <th className="border-0 text-wrap">Status Pengajuan</th>
+                      <th className="border-0 text-wrap">Status Transfer</th>
+                      <th className="border-0 text-wrap">Aksi</th>
+                    </tr>
+                    </thead>
+                    <tbody className="scroll scroller-tbody">
+                      { currentItems
+                      .map((pinjaman) => (
+                        <tr key={pinjaman.id_pinjaman}>
+                          <td className="text-center">{pinjaman.id_pinjaman}</td>
+                          <td className="text-center">{pinjaman.tanggal_pengajuan}</td>
+                          <td className="text-right">{findNomorAntrean(pinjaman.id_pinjaman)}</td>
+                          <td className="text-right">{pinjaman.id_peminjam}</td>
+                          <td className="text-center">{pinjaman?.Peminjam?.nama || 'N/A'}</td>
+                          <td className="text-right">{formatRupiah(pinjaman.jumlah_pinjaman)}</td>
+                          <td className="text-right">{formatRupiah(pinjaman.jumlah_angsuran)}</td>
+                          <td className="text-right">{formatRupiah(pinjaman.pinjaman_setelah_pembulatan)}</td>
+                          <td className="text-center">{pinjaman.rasio_angsuran}</td>
+                          <td className="text-center">{pinjaman.keperluan}</td>
+                          <td className="text-center">{pinjaman.UpdatePinjamanPlafond ? pinjaman.UpdatePinjamanPlafond.tanggal_plafond_tersedia: '-'}</td>
+                          <td className="text-center">
+                            {pinjaman.status_pengajuan === "Diterima" ? (
+                              <Badge pill bg="success p-2">
+                              Diterima
+                              </Badge >
+                              ) : pinjaman.status_pengajuan === "Dibatalkan" ? (
+                              <Badge pill bg="danger p-2">
+                              Dibatalkan
+                              </Badge >
+                              ) : (
+                              <Badge pill bg="secondary p-2">
+                              Ditunda
+                              </Badge >
+                            )}
+                          </td>
+                          <td className="text-center">
+                            {pinjaman.status_transfer === "Selesai" ? (
                                 <Badge pill bg="success p-2">
-                                Diterima
+                                Selesai
                                 </Badge >
-                                ) : pinjaman.status_pengajuan === "Dibatalkan" ? (
+                                ) : pinjaman.status_transfer === "Dibatalkan" ? (
                                 <Badge pill bg="danger p-2">
                                 Dibatalkan
                                 </Badge >
                                 ) : (
-                                <Badge pill bg="secondary p-2">
-                                Ditunda
+                                <Badge pill bg="secondary p-2 text-wrap">
+                                Belum Ditransfer
                                 </Badge >
-                              )}
-                            </td>
-                            <td className="text-center">
-                              {pinjaman.status_transfer === "Selesai" ? (
-                                  <Badge pill bg="success p-2">
-                                  Selesai
-                                  </Badge >
-                                  ) : pinjaman.status_transfer === "Dibatalkan" ? (
-                                  <Badge pill bg="danger p-2">
-                                  Dibatalkan
-                                  </Badge >
-                                  ) : (
-                                  <Badge pill bg="secondary p-2 text-wrap">
-                                  Belum Ditransfer
-                                  </Badge >
-                              )}
-                            </td>
-                            <td className="text-center">
-                            <Button
-                              className="btn-fill pull-right mb-2"
-                              type="button"
-                              variant="warning"
-                              onClick={() => handleScreeningClick(pinjaman)}
-                              style={{width: 125, fontSize:14}}>
-                              <FaUserCheck style={{ marginRight: '8px' }} />
-                              Screening
-                            </Button>
-                            <Button
-                              className="btn-fill pull-right mr-4"
-                              type="Terima"
-                              variant="info"
-                              onClick={() => handleTerimaClick(pinjaman)}
-                              disabled={pinjaman.status_pengajuan === "Diterima" || pinjaman.status_transfer === "Selesai" || pinjaman.not_compliant == 1 || pinjaman.not_compliant == null ||
-                                !isPreviousAccepted(findNomorAntrean(pinjaman.id_pinjaman))
-                              }
-                              style={{width: 107, fontSize:14}}>
-                              <FaCheckSquare style={{ marginRight: '8px' }} />
-                              Terima
-                            </Button>
-                            
-                            </td>
-                          </tr>
-                        ))
-                        }
-                      </tbody>
-                    </table>
-                  </div>
-                </Table>
-                )}
-              </Card.Body>
-            </Card>
-            <div className="pagination-container">
-            <Pagination
-                  activePage={currentPage}
-                  itemsCountPerPage={itemsPerPage}
-                  totalItemsCount={filteredAndSortedPinjaman.length}
-                  pageRangeDisplayed={5}
-                  onChange={handlePageChange}
-                  itemClass="page-item"
-                  linkClass="page-link"
-            />
-            </div>
-          </Col>
+                            )}
+                          </td>
+                          <td className="text-center">
+                          <Button
+                            className="btn-fill pull-right mb-2"
+                            type="button"
+                            variant="warning"
+                            onClick={() => handleScreeningClick(pinjaman)}
+                            style={{width: 125, fontSize:14}}>
+                            <FaUserCheck style={{ marginRight: '8px' }} />
+                            Screening
+                          </Button>
+                          <Button
+                            className="btn-fill pull-right mr-4"
+                            type="Terima"
+                            variant="info"
+                            onClick={() => handleTerimaClick(pinjaman)}
+                            disabled={pinjaman.status_pengajuan === "Diterima" || pinjaman.status_transfer === "Selesai" || pinjaman.not_compliant == 1 || pinjaman.not_compliant == null ||
+                              !isPreviousAccepted(findNomorAntrean(pinjaman.id_pinjaman))
+                            }
+                            style={{width: 107, fontSize:14}}>
+                            <FaCheckSquare style={{ marginRight: '8px' }} />
+                            Terima
+                          </Button>
+                          
+                          </td>
+                        </tr>
+                      ))
+                      }
+                    </tbody>
+                  </table>
+                </div>
+              </Table>
+              )}
+            </Card.Body>
+          </Card>
+          <div className="pagination-container">
+          <Pagination
+                activePage={currentPage}
+                itemsCountPerPage={itemsPerPage}
+                totalItemsCount={filteredAndSortedPinjaman.length}
+                pageRangeDisplayed={5}
+                onChange={handlePageChange}
+                itemClass="page-item"
+                linkClass="page-link"
+          />
+          </div>
+        </Col>
+
         </Row>
+          
       </Container>
     </>
   );

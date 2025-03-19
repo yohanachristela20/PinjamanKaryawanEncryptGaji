@@ -305,7 +305,7 @@ function MasterKaryawan() {
                   </div>
                 ) : (
                   <Table className="table-striped table-hover">
-                  <div className="table-scroll">
+                  <div className="table-scroll" style={{ height: 'auto' }}>
                      <table className="flex-table table table-striped table-hover">
                      <thead >
                      <tr>

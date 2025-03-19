@@ -146,12 +146,19 @@ const getNomorAntrean = async() => {
     // console.log("Fetched antreaannnn:", antreanResponse.data);
 
     const antreanData = antreanResponse.data;
+    console.log("antreanData: ", antreanData);
+    // .sort((a, b) => a.nomor_antrean - b.nomor_antrean)
 
     if (Array.isArray(antreanData) && antreanData.length > 0) {
-      const latestAntrean = antreanData[antreanData.length - 1];
-      const fetchedNomorAntrean = latestAntrean.nomor_antrean;
+      const sortedAntrean = antreanData.sort((a,b) => Number(a.nomor_antrean) - Number(b.nomor_antrean));
+      console.log("sortedAntrean: ", sortedAntrean);
+      
+      const latestAntrean = sortedAntrean[sortedAntrean.length - 1].nomor_antrean;
+      console.log("latestAntrean: ", latestAntrean);
+      // const fetchedNomorAntrean = latestAntrean.nomor_antrean;
+      // console.log("fetchedNomorAntrean: ", fetchedNomorAntrean);
 
-      setNomorAntrean(fetchedNomorAntrean !== null && fetchedNomorAntrean !== undefined ? fetchedNomorAntrean : 1);
+      setNomorAntrean(latestAntrean !== null && latestAntrean !== undefined ? latestAntrean : 1);
     } else {
       setNomorAntrean(1);
       console.warn("Data antrean kosong, nomor antrean diset menjadi 1.");
@@ -438,7 +445,7 @@ useEffect(() => {
     }
     
     return rupiah;
-};
+  };
 
   const [steps, setSteps] = useState(1);
   const [formData, setFormData] = useState({
